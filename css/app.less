@@ -1,0 +1,175 @@
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 11em;
+	height: 11em;
+	margin: -5.5em;
+	// background: green;
+	transform: rotate(-45deg);
+	&:after,
+	&:before {
+		display: block;
+		content: '';
+		width: 11em;
+		height: 11em;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		border-radius: 0.5em;
+		transform: translate(-50%, -50%);
+	}
+	&:after {
+		height: 1em; 
+		animation: move-after 2s infinite;
+		// background: orange;
+		// box-shadow: 0 3em #f7dfac, 0 -3em #b3e5d5;
+
+		// 第一帧
+		// width: 1em;
+		// box-shadow: -5em 3em #f7dfac, 5em -3em #b3e5d5;
+		// // 第二帧
+		// box-shadow: 0 3em #f7dfac, 0 -3em #b3e5d5;
+		// // 第三帧 是与第一帧的镜像
+		// width: 1em;
+		// box-shadow: 5em 3em #f7dfac, -5em -3em #b3e5d5;
+	}
+	&:before {
+		width: 1em;
+		animation: move-before 2s infinite;
+		// background: blue;
+		// box-shadow: -3em 0em #f4a7c4, 3em 0em #c9f0fc;
+		// 第一帧
+		// height: 1em;
+		// box-shadow: -3em -5em #f4a7c4, 3em 5em #c9f0fc;
+		// // 第二帧
+		// box-shadow: -3em 0em #f4a7c4, 3em 0em #c9f0fc;
+		// // 第三帧 是与第一帧的镜像
+		// height: 1em;
+		// box-shadow: -3em 5em #f4a7c4, 3em -5em #c9f0fc;
+	}
+}
+.loader-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 30em;
+	height: 1em;
+	margin: -8em -15em;
+	text-align: center;
+	font-size: 20px;
+}
+// 设置动画关键帧
+@keyframes move-after {
+	0% {
+		width: 1em;
+		box-shadow: -5em 3em #f7dfac, 5em -3em #b3e5d5;
+	}
+	35% {
+		width: 11em;
+		box-shadow: 0 3em #f7dfac, 0 -3em #b3e5d5;
+	}
+	70% {
+		width: 1em;
+		box-shadow: 5em 3em #f7dfac, -5em -3em #b3e5d5;
+	}
+	100% {
+		width: 1em;
+		box-shadow: -5em 3em #f7dfac, 5em -3em #b3e5d5;
+	}
+}
+@keyframes move-before {
+	0% {
+		height: 1em;
+		box-shadow: -3em -5em #f4a7c4, 3em 5em #c9f0fc;
+	}
+	35% {
+		height: 11em;
+		box-shadow: -3em 0em #f4a7c4, 3em 0em #c9f0fc;
+	}
+	70% {
+		height: 1em;
+		box-shadow: -3em 5em #f4a7c4, 3em -5em #c9f0fc;
+	}
+	100% {
+		height: 1em;
+		box-shadow: -3em -5em #f4a7c4, 3em 5em #c9f0fc;
+	}
+}
+
+.header {
+	.nav > li > a {
+		padding: 15px;
+	}
+	.nav > li > a:hover, 
+	.nav > li > a:focus {
+		background: none;
+	}
+	.header-top {
+		input {
+			margin-top: 7px;
+		}
+		img {
+			cursor: pointer;
+		}
+	}
+	.banner {
+		height: 500px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center 10%;
+	}
+	.banner-1 {
+		background-image: url(../img/banner/banner1.jpg)
+	}
+	.banner-0 {
+		background-image: url(../img/banner/banner0.jpg)
+	}
+}
+
+.main {
+	padding: 40px 0 80px;
+	ul {
+		margin-right: -20px;
+		padding: 0;
+	}
+	li {
+		list-style: none;
+		float: left;
+		width: 270px;
+		height: 180px;
+		margin-bottom: 20px;
+		margin-right: 20px;
+		position: relative;
+		a,
+		a:hover {
+			color: #fff;
+			text-decoration: none;
+		}
+		.content {
+			text-align: center;
+			// 借助table居中
+			display: table-cell;
+			vertical-align: middle;
+			height: 180px;
+			width: 270px;
+			h2 {
+				padding: 0 20px;
+				line-height: 40px;
+			}
+		}
+		.layer {
+			position: absolute;
+			background: rgba(0, 0, 0, 0.8);
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 30px 20px;
+			display: none;
+		}
+		&:hover .layer {
+			display: block;
+		}
+	}
+}
